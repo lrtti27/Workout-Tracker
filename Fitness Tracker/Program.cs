@@ -4,8 +4,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<FitnessContext>(options => options.UseSqlite("Data Source=fitness.db"));
 var app = builder.Build();
-
-
+app.UseStaticFiles();
 
 app.MapGet("/", async context =>
 {
@@ -37,6 +36,29 @@ app.MapDelete("/workouts/{id}", async (int id, FitnessContext db) =>
     db.Workouts.Remove(workout);
     await db.SaveChangesAsync();
     return Results.Ok();
+});
+
+app.MapGet("/insights/{exercise}", async (string exercise, FitnessContext db) =>
+{
+    //Get weights from the week before this one
+    var lastWeek = DateTime.Now.AddDays(-14);
+    var thisWeek = DateTime.Now.AddDays(-7);
+
+    var lastWeekRecent = await db.Workouts
+        .Where(w => w.Exercise == exercise && w.Date >= lastWeek && w.Date < thisWeek)
+        .OrderBy(w => w.Date)
+        .ToListAsync();
+    
+    var thisWeekRecent = await db.Workouts
+        .Where(w => w.Exercise == exercise && w.Date >= thisWeek)
+        .OrderBy(w => w.Date)
+        .ToListAsync();
+
+    double lastWeekAvg = lastWeekRecent.Any() ? lastWeekRecent.Average(w => w.Weight) : 0.0;
+    double thisWeekAvg = thisWeekRecent.Any() ? thisWeekRecent.Average(w => w.Weight) : 0.0;
+    
+    return Results.Json(new { lastWeekAvg, thisWeekAvg });
+
 });
 
 app.Run();

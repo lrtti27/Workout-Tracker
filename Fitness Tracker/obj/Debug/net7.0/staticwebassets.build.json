@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+xU5FdYNPAO4TblhvASUpH0D8Lx0WWGZ7TfwiQeeZOc=",
+  "Hash": "PHr2Qv+GH1pJuoKiPtAQkZfJ9vQFZiXy/imw9KzauhY=",
   "Source": "Fitness Tracker",
   "BasePath": "_content/Fitness Tracker",
   "Mode": "Default",
@@ -32,6 +32,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/index.html"
+    },
+    {
+      "Identity": "/Users/leoricotti/RiderProjects/Fitness Tracker/Fitness Tracker/wwwroot/workoutlog.html",
+      "SourceId": "Fitness Tracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/leoricotti/RiderProjects/Fitness Tracker/Fitness Tracker/wwwroot/",
+      "BasePath": "_content/Fitness Tracker",
+      "RelativePath": "workoutlog.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/workoutlog.html"
     }
   ]
 }

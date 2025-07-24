@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/index.html"
     },
     {
+      "Id": "/Users/leoricotti/RiderProjects/Fitness Tracker/Fitness Tracker/wwwroot/workoutlog.html",
+      "PackagePath": "staticwebassets/workoutlog.html"
+    },
+    {
       "Id": "obj/Debug/net7.0/staticwebassets/msbuild.Fitness Tracker.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
