@@ -147,6 +147,14 @@
             chart.destroy();
         }
 
+        const weightMin = Math.min(...weights);
+        const weightMax = Math.max(...weights);
+        const range = weightMax - weightMin;
+        const padding = range === 0 ? 10 : range * 0.1;
+
+        const yMin = weightMin - padding;
+        const yMax = weightMax + padding;
+        
         chart = new Chart(ctx, {
             type: 'line',
             data: {
@@ -154,7 +162,7 @@
                 datasets: [{
                     label: 'Weight',
                     data: weights,
-                    fill: false,
+                    fill: true,
                     borderColor: 'rgb(75, 192, 192)',
                     tension: 0.1
                 }]
@@ -172,7 +180,7 @@
                         }
                     }
                 },
-            
+                
                 scales: {
                     x: {
                         title: {
@@ -185,7 +193,9 @@
                             display: true,
                             text: 'Weight'
                         },
-                        beginAtZero: true
+                        beginAtZero: false,
+                        min: yMin,
+                        max: yMax,
                     }
                 }
             }
