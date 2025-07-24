@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "+xU5FdYNPAO4TblhvASUpH0D8Lx0WWGZ7TfwiQeeZOc=",
+  "Source": "Fitness Tracker",
+  "BasePath": "_content/Fitness Tracker",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Fitness Tracker/wwwroot",
+      "Source": "Fitness Tracker",
+      "ContentRoot": "/Users/leoricotti/RiderProjects/Fitness Tracker/Fitness Tracker/wwwroot/",
+      "BasePath": "_content/Fitness Tracker",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/leoricotti/RiderProjects/Fitness Tracker/Fitness Tracker/wwwroot/index.html",
+      "SourceId": "Fitness Tracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/leoricotti/RiderProjects/Fitness Tracker/Fitness Tracker/wwwroot/",
+      "BasePath": "_content/Fitness Tracker",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/index.html"
+    }
+  ]
+}
