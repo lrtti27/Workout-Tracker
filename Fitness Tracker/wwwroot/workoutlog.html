@@ -87,7 +87,7 @@
     function filterWorkouts(workouts, exercise) {
         if (!exercise) return workouts;
         const filterVal = exercise.trim().toLowerCase();
-        return workouts.filter(w => w.exercise.trim().toLowerCase() === filterVal);
+        return workouts.filter(w => w.exercise?.name.trim().toLowerCase() === filterVal);
     }
 
     async function loadWorkouts() {
@@ -107,7 +107,7 @@
             const row = document.createElement('tr');
             row.innerHTML = `
             <td>${w.id}</td>
-            <td>${w.exercise}</td>
+            <td>${w.exercise?.name || "Unknown"}</td>
             <td>${w.weight}</td>
             <td>${w.reps}</td>
             <td>${new Date(w.date).toLocaleDateString()}</td>
@@ -205,8 +205,8 @@
     function populateExerciseFilter(workouts) {
         const select = document.getElementById('exerciseFilter');
         select.innerHTML = '<option value="">All</option>'
-        
-        const exercises = [...new Set(workouts.map(w => w.exercise.trim()))];
+
+        const exercises = [...new Set(workouts.map(w => w.exercise?.name).filter(Boolean))];
         exercises.sort();
         
         exercises.forEach(exercise => {
